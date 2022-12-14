@@ -3,7 +3,6 @@ import AllProductos from "../pizzas.json";
 
 const Productos = () => {
   const data = AllProductos;
-  console.log(data);
 
   return (
     <div className="cards">
