@@ -1,3 +1,40 @@
 .App {
   text-align: center;
 }
+
+.containerHome {
+  background-image: url(./assets/imgs/photohome.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.contenido-photo {
+  padding: 3.5rem;
+}
+
+.contenido-photo h1 {
+  font-size: 5rem;
+  color: white;
+}
+
+.contenido-photo h4 {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.cards {
+  padding: 40px;
+  display: flex;
+  
+}
+
+.container-productos {
+  border: 1px solid lightgray;
+  
+}
+
+.img-producto {
+  width: 100%;
+  
+}
