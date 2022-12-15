@@ -6,15 +6,22 @@ const Productos = () => {
 
   return (
     <div className="cards">
-      {data.map((producto) => {
+      {data.map((producto, index) => {
         return (
           <div className="container-productos">
-            <img className="img-producto" src={producto.img} alt={producto.name} />
+            <img
+              className="img-producto"
+              src={producto.img}
+              alt={producto.name}
+            />
             <h2>{producto.name}</h2>
-            <ul>
-              <li>🍕{producto.ingredients}</li>
-            </ul>
-            <div>${producto.price}</div>
+            <div>
+              <p key={index}>{producto.ingredients[0]}</p>
+              <p key={index}>{producto.ingredients[1]}</p>
+              <p key={index}>{producto.ingredients[2]}</p>
+              <p key={index}>{producto.ingredients[3]}</p>
+            </div>
+            <p>${producto.price}</p>
             <div>
               <button>Ver Más 👀</button>
               <button>Añadir 🛒</button>
