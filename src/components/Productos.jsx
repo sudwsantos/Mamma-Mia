@@ -15,12 +15,13 @@ const Productos = () => {
               alt={producto.name}
             />
             <h2>{producto.name}</h2>
+            <hr></hr>
             <div className="container-ingred">
               <h5>Ingredientes:</h5>
-              <p key={index}>{producto.ingredients[0]}</p>
-              <p key={index}>{producto.ingredients[1]}</p>
-              <p key={index}>{producto.ingredients[2]}</p>
-              <p key={index}>{producto.ingredients[3]}</p>
+              <p key={index}>🍕 {producto.ingredients[0]}</p>
+              <p key={index}>🍕 {producto.ingredients[1]}</p>
+              <p key={index}>🍕 {producto.ingredients[2]}</p>
+              <p key={index}>🍕 {producto.ingredients[3]}</p>
             </div>
             <p>${producto.price}</p>
             <div className="container-btn">
