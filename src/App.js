@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-
+import Pedido from './views/Pedido';
 import Home from './views/Home';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <BrowserRouter>
    
       <Home />
+      <Pedido />
 
 
       </BrowserRouter>
