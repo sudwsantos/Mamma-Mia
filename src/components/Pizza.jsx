@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import BTN_ADD from "./Btn_Add";
 import AllProductos from "../pizzas.json";
 
 const Pizza = () => {
   const data = AllProductos;
 
+{
+  // El useState me ayudará a que se renderice una pura vez. Como esta ahora me muestra todos los productos en pantalla de una
+}
+
   return (
-    <div className='contenedor-ver-mas'>
+    <div className="contenedor-ver-mas">
       {data.map((pizza, index) => {
         return (
           <div className="contenedor-pizza">
@@ -20,14 +25,12 @@ const Pizza = () => {
               <p key={index}>🍕 {pizza.ingredients[3]}</p>
               <div>${pizza.price}</div>
             </div>
-            <button>Añadir 🛒</button>
+            <BTN_ADD />
           </div>
         );
       })}
-      
-
     </div>
-  )
-}
+  );
+};
 
-export default Pizza
+export default Pizza;

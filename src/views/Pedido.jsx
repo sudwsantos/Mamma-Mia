@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Pizza from "../components/Pizza";
 
 const Pedido = () => {
   return (
-    <div>Pedido</div>
-  )
-}
+    <div>
+      <Pizza />
+    </div>
+  );
+};
 
-export default Pedido
+export default Pedido;

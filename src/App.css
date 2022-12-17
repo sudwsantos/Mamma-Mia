@@ -41,6 +41,9 @@
 
 .container-btn {
   margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn1 {
   margin: 10px;

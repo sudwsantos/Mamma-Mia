@@ -1,5 +1,7 @@
 import React from "react";
 import AllProductos from "../pizzas.json";
+import BTN_ADD from "./Btn_Add";
+import BTN_VER_MAS from "./Btn_Ver_Mas";
 
 const Productos = () => {
   const data = AllProductos;
@@ -25,8 +27,8 @@ const Productos = () => {
             </div>
             <p>${producto.price}</p>
             <div className="container-btn">
-              <button className="btn1">Ver Más 👀</button>
-              <button className="btn2">Añadir 🛒</button>
+              <BTN_VER_MAS />
+              <BTN_ADD />
             </div>
           </div>
         );
