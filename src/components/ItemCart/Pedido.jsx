@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../Context/CartContext";
+import { CartContext } from "../../Context/CartContext.jsx";
 import "./ItemCart.css"
 
 const ItemCart = ({ item }) => {
@@ -26,31 +26,3 @@ const ItemCart = ({ item }) => {
 };
 
 export default ItemCart;
-
-// import React from "react";
-// import AllProductos from "../pizzas.json";
-
-// const Pedido = () => {
-//   const data = AllProductos;
-
-//   return (
-//     <>
-//       {data.map((info, i) => {
-//         return (
-//           <div className="contenedor-pedido">
-//             <h3>Detalles del pedido: {info.name}</h3>
-//             <div className="pedido-detalle">
-//               {
-//                 // recibe lo que viene de btn-add
-//               }
-
-//             </div>
-
-//           </div>
-//         )
-//       })}
-//     </>
-//   );
-// };
-
-// export default Pedido;

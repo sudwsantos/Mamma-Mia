@@ -4,10 +4,11 @@ import Pedido from "./components/ItemCart/Pedido.jsx";
 import Home from "./components/Home/Home.jsx";
 import Navegacion from "./components/Navbar.jsx";
 import NotFound from "./components/NotFound.jsx";
+import { CartProvider } from "./Context/CartContext";
 
 function App() {
   return (
-    <div className="App">
+    <CartProvider>
       <BrowserRouter>
         <Navegacion />
         <Routes>
@@ -16,7 +17,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </CartProvider>
   );
 }
 

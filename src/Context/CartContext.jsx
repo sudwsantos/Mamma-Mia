@@ -25,12 +25,12 @@ export const CartProvider = ({ children }) => {
       setCartItem(
         cartItem.map((productInCart) => {
           if (productInCart.id === product.id) {
-            return { ...inCart, amount: inCart.amount + 1 };
+            return {...inCart, amount: inCart.amount + 1 };
           } else return productInCart;
         })
       );
     } else {
-      setCartItem([...cartItem, { ...product, amount: 1 }]);
+      setCartItem([...cartItem, {...product, amount: 1 }]);
     }
   };
 
@@ -44,7 +44,7 @@ export const CartProvider = ({ children }) => {
         cartItem.filter((productInCart) => productInCart.id !== product.id)
       );
     } else {
-      cartItem.map((productInCart) => {
+      setCartItem.map((productInCart) => {
         if (productInCart.id === product.id) {
           return { ...inCart, amount: inCart.amount - 1 };
         } else return productInCart;
@@ -53,10 +53,10 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <createContext.Provider
+    <CartContext.Provider
       value={{ cartItem, addItemtoCart, deleteItemToCart }}
     >
       {children}
-    </createContext.Provider>
+    </CartContext.Provider>
   );
 };

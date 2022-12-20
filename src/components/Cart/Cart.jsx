@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../Context/CartContext";
-import ItemCart from "../ItemCart/Pedido"
+import { CartContext } from "../../Context/CartContext.jsx";
+import ItemCart from "../ItemCart/Pedido.jsx"
 import "./Cart.css"
 
 const Cart = () => {
@@ -29,7 +29,7 @@ const Cart = () => {
         className="buttonCartContainer"
       >
         <div className="buttonCart">
-          {!cartOpen ? <di>🛒</di> : <div>❌</div>}
+          {!cartOpen ? <div>🛒</div> : <div>❌</div>}
         </div>
         {!cartOpen && <div className="productdNumber">{productsLength}</div>}
       
@@ -39,7 +39,7 @@ const Cart = () => {
           <h2>Tu carrito</h2>
 
           {cartItem.length === 0 ? (
-            <p>Tu carrito está vacío!</p>
+            <p className="cartVacio">Tu carrito está vacío!</p>
           ) : (
             <div className="productsContainer">
               {cartItem.map((item, i) => {

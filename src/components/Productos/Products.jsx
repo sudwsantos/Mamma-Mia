@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../Context/CartContext";
+import { CartContext } from "../../Context/CartContext.jsx";
 import ProductsData from "../../Data/pizzas.json";
 import "./Products.css"
 
@@ -12,12 +12,19 @@ const Products = () => {
         <div className="product" key={i}>
           <img className="imgProduct" src={product.img} alt={product.name} />
           <div>
-            <p>
-              {product.name} - ${product.price}
-            </p>
+            <h5>{product.name}</h5>
+            <hr></hr>
           </div>
+          <div className="container-ingred">
+            <h5>Ingredientes:</h5>
+            <p key={i}>🍕 {product.ingredients[0]}</p>
+            <p key={i}>🍕 {product.ingredients[1]}</p>
+            <p key={i}>🍕 {product.ingredients[2]}</p>
+            <p key={i}>🍕 {product.ingredients[3]}</p>
+          </div>
+            <p>${product.price}</p>
           <button onClick={() => addItemToCart(product)}>
-            Agregar a tu carrito
+            Agregar
           </button>
         </div>
       ))}
@@ -26,44 +33,3 @@ const Products = () => {
 };
 
 export default Products;
-
-// import React from "react";
-// import AllProductos from "../pizzas.json";
-// import BTN_ADD from "./Btn_Add";
-// import BTN_VER_MAS from "./Btn_Ver_Mas";
-
-// const Productos = () => {
-//   const data = AllProductos;
-
-//   return (
-//     <div className="cards">
-//       {data.map((producto, index) => {
-//         return (
-//           <div className="container-productos">
-//             <img
-//               className="img-producto"
-//               src={producto.img}
-//               alt={producto.name}
-//             />
-//             <h2>{producto.name}</h2>
-//             <hr></hr>
-//             <div className="container-ingred">
-//               <h5>Ingredientes:</h5>
-//               <p key={index}>🍕 {producto.ingredients[0]}</p>
-//               <p key={index}>🍕 {producto.ingredients[1]}</p>
-//               <p key={index}>🍕 {producto.ingredients[2]}</p>
-//               <p key={index}>🍕 {producto.ingredients[3]}</p>
-//             </div>
-//             <p>${producto.price}</p>
-//             <div className="container-btn">
-//               <BTN_VER_MAS />
-//               <BTN_ADD />
-//             </div>
-//           </div>
-//         );
-//       })}
-//     </div>
-//   );
-// };
-
-// export default Productos;
