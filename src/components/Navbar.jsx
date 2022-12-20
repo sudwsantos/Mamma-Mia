@@ -11,7 +11,7 @@ const Navegacion = () => {
             <Link to="/" className="text-white ms-3 text-decoration-none">
               🍕
             </Link>
-            Pizzería Mamma Mia!
+            Home
           </Navbar.Brand>
           <Link to="/Pedido" className="text-white ms-3 text-decoration-none">
             🛒 $

@@ -1,0 +1,21 @@
+.containerHome {
+    background-image: url(../../assets/imgs/photohome.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.contenido-photo {
+    padding: 5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+

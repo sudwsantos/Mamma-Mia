@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Pedido from "./views/Pedido";
-import Home from "./views/Home";
-import Navegacion from "./components/Navbar";
-import NotFound from "./views/NotFound";
+import Pedido from "./components/ItemCart/Pedido.jsx";
+import Home from "./components/Home/Home.jsx";
+import Navegacion from "./components/Navbar.jsx";
+import NotFound from "./components/NotFound.jsx";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
-
-import "../App.css";
-import Productos from "../components/Productos";
+import Cart from "../Cart/Cart.jsx";
+import Products from "../Productos/Products.jsx";
+import "./Home.css";
 
 const Home = () => {
   return (
@@ -12,8 +12,10 @@ const Home = () => {
           <h4>!Tenemos las mejores pizzas que podrás encontrar!</h4>
         </div>
       </div>
-
-      <Productos />
+      <div className="home">
+      <Cart />
+      <Products />
+      </div>
     </>
   );
 };
