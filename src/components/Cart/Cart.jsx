@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../Context/CartContext.jsx";
-import ItemCart from "../ItemCart/Pedido.jsx"
-import "./Cart.css"
+import ItemCart from "../ItemCart/Pedido.jsx";
+import "./Cart.css";
 
 const Cart = () => {
   const [cartOpen, setCartOpen] = useState(false);
@@ -16,11 +16,12 @@ const Cart = () => {
   }, [cartItem]);
 
   const total = cartItem.reduce(
-    (previous, current) => previous + current.price,
+    (previous, current) => previous + current.amount * current.price,
     0
   );
 
   return (
+    
     <div className="cartContainer">
       <div
         onClick={() => {
@@ -29,10 +30,9 @@ const Cart = () => {
         className="buttonCartContainer"
       >
         <div className="buttonCart">
-          {!cartOpen ? <div>🛒</div> : <div>❌</div>}
+          {!cartOpen ? (<div>🛒</div>) : (<div>❌</div>)}
         </div>
         {!cartOpen && <div className="productdNumber">{productsLength}</div>}
-      
       </div>
       {cartItem && cartOpen && (
         <div className="cart">
@@ -41,10 +41,10 @@ const Cart = () => {
           {cartItem.length === 0 ? (
             <p className="cartVacio">Tu carrito está vacío!</p>
           ) : (
-            <div className="productsContainer">
-              {cartItem.map((item, i) => {
-                return <ItemCart kei={i} item={item} />;
-              })}
+            <div>
+              {cartItem.map((item, i) => (
+                <ItemCart kei={i} item={item} />
+              ))}
             </div>
           )}
           <h2 className="total">Total: ${total}</h2>

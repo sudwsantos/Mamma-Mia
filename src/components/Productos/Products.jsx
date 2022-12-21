@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext.jsx";
 import ProductsData from "../../Data/pizzas.json";
-import "./Products.css"
+import { useNavigate } from "react-router-dom";
+import "./Products.css";
 
 const Products = () => {
   const { addItemToCart } = useContext(CartContext);
+
+  const navigate = useNavigate();
 
   return (
     <div className="productsContainer">
@@ -17,15 +20,22 @@ const Products = () => {
           </div>
           <div className="container-ingred">
             <h5>Ingredientes:</h5>
-            <p key={i}>🍕 {product.ingredients[0]}</p>
-            <p key={i}>🍕 {product.ingredients[1]}</p>
-            <p key={i}>🍕 {product.ingredients[2]}</p>
-            <p key={i}>🍕 {product.ingredients[3]}</p>
+            <p>🍕 {product.ingredients[0]}</p>
+            <p>🍕 {product.ingredients[1]}</p>
+            <p>🍕 {product.ingredients[2]}</p>
+            <p>🍕 {product.ingredients[3]}</p>
           </div>
-            <p>${product.price}</p>
-          <button onClick={() => addItemToCart(product)}>
-            Agregar
-          </button>
+          <p>${product.price}</p>
+          <div className="buttonContainer">
+            <button onClick={() => addItemToCart(product)}>Agregar</button>
+            <button
+              onClick={() => {
+                navigate("/detalleprod");
+              }}
+            >
+              Ver Más
+            </button>
+          </div>
         </div>
       ))}
     </div>

@@ -12,8 +12,8 @@ const ItemCart = ({ item }) => {
         <div className="left">
           <p>{item.name}</p>
           <div className="buttons">
-            <button onClick={() => addItemToCart(item)}> + </button>
-            <button onClick={() => deleteItemToCart(item)}> - </button>
+            <button onClick={() => addItemToCart(item)}> ➕ </button>
+            <button onClick={() => deleteItemToCart(item)}> ➖ </button>
           </div>
         </div>
         <div className="right">

@@ -1,5 +1,4 @@
 import React from "react";
-import Cart from "../Cart/Cart.jsx";
 import Products from "../Productos/Products.jsx";
 import "./Home.css";
 
@@ -13,8 +12,7 @@ const Home = () => {
         </div>
       </div>
       <div className="home">
-      <Cart />
-      <Products />
+        <Products />
       </div>
     </>
   );

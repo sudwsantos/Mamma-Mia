@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Cart from "./Cart/Cart";
 
 const Navegacion = () => {
   return (
@@ -13,9 +14,7 @@ const Navegacion = () => {
             </Link>
             Home
           </Navbar.Brand>
-          <Link to="/Pedido" className="text-white ms-3 text-decoration-none">
-            🛒 $
-          </Link>
+          <Cart />
         </Container>
       </Navbar>
     </>

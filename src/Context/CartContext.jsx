@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-export const CartContext = createContext()
+export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItem, setCartItem] = useState(() => {
@@ -14,9 +14,10 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("cartProducts", JSON.stringify(cartItem));
+    console.log(cartItem);
   }, [cartItem]);
 
-  const addItemtoCart = (product) => {
+  const addItemToCart = (product) => {
     const inCart = cartItem.find(
       (productInCart) => productInCart.id === product.id
     );
@@ -25,12 +26,12 @@ export const CartProvider = ({ children }) => {
       setCartItem(
         cartItem.map((productInCart) => {
           if (productInCart.id === product.id) {
-            return {...inCart, amount: inCart.amount + 1 };
+            return { ...inCart, amount: inCart.amount + 1 };
           } else return productInCart;
         })
       );
     } else {
-      setCartItem([...cartItem, {...product, amount: 1 }]);
+      setCartItem([...cartItem, { ...product, amount: 1 }]);
     }
   };
 
@@ -44,18 +45,18 @@ export const CartProvider = ({ children }) => {
         cartItem.filter((productInCart) => productInCart.id !== product.id)
       );
     } else {
-      setCartItem.map((productInCart) => {
-        if (productInCart.id === product.id) {
-          return { ...inCart, amount: inCart.amount - 1 };
-        } else return productInCart;
-      });
+      setCartItem(
+        cartItem.map((productInCart) => {
+          if (productInCart.id === product.id) {
+            return { ...inCart, amount: inCart.amount - 1 };
+          } else return productInCart;
+        })
+      );
     }
   };
 
   return (
-    <CartContext.Provider
-      value={{ cartItem, addItemtoCart, deleteItemToCart }}
-    >
+    <CartContext.Provider value={{ cartItem, addItemToCart, deleteItemToCart }}>
       {children}
     </CartContext.Provider>
   );
